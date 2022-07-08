@@ -1,0 +1,26 @@
+﻿@model Currency.Models.CurrencyModel[]
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<table class="table table-striped table-dark">
+    <thead>
+        <tr>
+            <th scope="col">Döviz Kodu</th>
+            <th scope="col">Döviz Cinsi</th>
+            <th scope="col">Döviz Alış</th>
+            <th scope="col">Döviz Satış</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">@item.CurrencyCode / TRY</th>
+                <td>@item.Name</td>
+                <td>@item.ForexBuying</td>
+                <td>@item.ForexSelling</td>
+            </tr>
+        }
+    </tbody>
+</table>
